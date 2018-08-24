@@ -25,7 +25,7 @@
 
 **_insert row to table_**
 
-     someApp.insertInto('users', ['name', 'email', 'age'],  
+     nosql.insertInto('users', ['name', 'email', 'age'],  
         ['arul', 'arulgetsolute@gmail.com', 28], function (data) {
          res.inserted ? console.log('created table') : 
          console.error(res.error)
