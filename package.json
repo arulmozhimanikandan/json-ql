@@ -1,6 +1,6 @@
 {
   "name": "simple-jsonsql",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Non SQL DB using JSON",
   "main": "index.js",
   "scripts": {
@@ -25,5 +25,8 @@
     "create-file": "^1.0.1",
     "jsonfile": "^4.0.0",
     "mkdirp": "^0.5.1"
+  },
+  "devDependencies": {
+    "jest": "^23.5.0"
   }
 }

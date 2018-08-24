@@ -23,15 +23,19 @@ class jsonQl {
     // Creates new table json
     createTable(tableName, columns, callback) {
         mkdirp(`DB/${tableName}`, function (err) {
-            if (err) callback(err);
-            else {
-                let content = {items: {}, columnsInfo: {}};
-                columns.forEach(column => {
-                    content.columnsInfo[column.split(' ')[0]] = column.split(' ')[1]
-                })
-                createFile(`DB/${tableName}/index.json`, JSON.stringify(content), function () {
-                    callback({created: true})
-                })
+            if(tableName && columns) {
+                if (err) callback(err);
+                else {
+                    let content = {items: {}, columnsInfo: {}};
+                    columns.forEach(column => {
+                        content.columnsInfo[column.split(' ')[0]] = column.split(' ')[1]
+                    })
+                    createFile(`DB/${tableName}/index.json`, JSON.stringify(content), function () {
+                        callback({created: true})
+                    })
+                }
+            }else {
+                callback({error: 'Parameters invalid'})
             }
         })
     }
@@ -53,7 +57,7 @@ class jsonQl {
                             if (values.map((value, i) => {
                                 return typeof(value) === Object.values(obj.columnsInfo)[i]
                             }).includes(false)) {
-                                callback({error: 'invalid value Type'})
+                                callback({error: 'Invalid value Type'})
                             } else {
                                 jsonfile.readFile(`DB/${tableName}/index.json`, (err, obj) => {
                                     let newTableData = {...obj}
@@ -81,3 +85,10 @@ class jsonQl {
 
 
 exports.module = jsonQl;
+
+const someApp = new jsonQl();
+someApp.createTable('users', ['name string', 'email string', 'age number'], function (data) {
+    someApp.insertInto('users', ['name', 'email', 'age'], ['arul', 'arulgetsolute@gmail.com', 28], function (data) {
+        console.log(data)
+    })
+})
