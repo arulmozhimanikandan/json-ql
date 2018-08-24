@@ -1,0 +1,31 @@
+{
+  "name": "json-ql",
+  "version": "1.0.0",
+  "description": "Non SQL DB using JSON",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arulmozhimanikandan/json-ql.git"
+  },
+  "keywords": [
+    "jsonQl",
+    "noSql",
+    "easy",
+    "query",
+    "management"
+  ],
+  "author": "Arulmozhimanikandan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arulmozhimanikandan/json-ql/issues"
+  },
+  "homepage": "https://github.com/arulmozhimanikandan/json-ql#readme",
+  "dependencies": {
+    "create-file": "^1.0.1",
+    "jsonfile": "^4.0.0",
+    "mkdirp": "^0.5.1"
+  }
+}
