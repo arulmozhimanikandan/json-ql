@@ -1,6 +1,6 @@
 {
-  "name": "json-ql",
-  "version": "1.0.0",
+  "name": "simple-jsonsql",
+  "version": "1.0.1",
   "description": "Non SQL DB using JSON",
   "main": "index.js",
   "scripts": {
@@ -13,9 +13,7 @@
   "keywords": [
     "jsonQl",
     "noSql",
-    "easy",
-    "query",
-    "management"
+    "easy query management"
   ],
   "author": "Arulmozhimanikandan",
   "license": "ISC",
