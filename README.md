@@ -1,4 +1,4 @@
-# json-ql
+# simple-jsonsql
 
 **How to install**
 
