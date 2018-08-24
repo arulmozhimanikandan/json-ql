@@ -81,10 +81,3 @@ class jsonQl {
 
 
 exports.module = jsonQl;
-
-const someApp = new jsonQl();
-someApp.createTable('users', ['name string', 'email string', 'age number'], function (data) {
-    someApp.insertInto('users', ['name', 'email', 'age'], ['arul', 'arulgetsolute@gmail.com', 28], function (data) {
-        console.log(data)
-    })
-})
