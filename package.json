@@ -1,6 +1,6 @@
 {
   "name": "simple-jsonsql",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Non SQL DB using JSON",
   "main": "index.js",
   "scripts": {
