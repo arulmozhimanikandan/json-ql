@@ -55,7 +55,7 @@ describe('Test jsonQl class', () => {
     })
     describe('Test select operation on table', () => {
         it('should return rows with specific columns of the table when select called with specific columns', () => {
-            nosqlDB.selectItem('users', ['age', 'emails'], (data) => {
+            nosqlDB.selectItem('users', ['age'], (data) => {
                 expect(data).toEqual({"data": [{"ldmcj": {"age": 28}}, {"m0reti": {"age": 28}}]})
             });
         })

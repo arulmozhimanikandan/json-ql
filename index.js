@@ -114,8 +114,3 @@ class jsonQl {
 
 
 exports.module = jsonQl;
-
-const someApp = new jsonQl();
-someApp.selectItem('users', '*', (data) => {
-    console.log(JSON.stringify(data))
-});
