@@ -36,8 +36,8 @@ class jsonQl {
 
     /**
      * @description Creates new table json
-     * @param {String} tableName
-     * @param {Array} columns
+     * @param {String} tableName - Table name
+     * @param {Array} columns - Array of columns along with type
      * @param {Function} callback
      */
     createTable(tableName = this.constructor.isRequired('table name', createTableAction), columns = this.constructor.isRequired('columns', createTableAction), callback) {
@@ -61,9 +61,9 @@ class jsonQl {
 
     /**
      * @description Insert data into table
-     * @param {String} tableName
-     * @param {Array} columns
-     * @param {Array} values
+     * @param {String} tableName - Table name
+     * @param {Array} columns - Array of columns names
+     * @param {Array} values - Array of values
      * @param {Function} callback
      */
     insertInto(tableName = this.constructor.isRequired('table name', insertAction), columns = this.constructor.isRequired('columns', insertAction), values = this.constructor.isRequired('values', insertAction), callback) {
@@ -108,8 +108,8 @@ class jsonQl {
 
     /**
      * @description Read table data
-     * @param {String} tableName
-     * @param {Array} columns
+     * @param {String} tableName - Table name
+     * @param {Array|string} columns - Array of columns names || * to fetch all columns
      * @param {Function} callback
      */
     selectItem(tableName = this.constructor.isRequired('table name', selectAction), columns = this.constructor.isRequired('columns', selectAction), callback) {
