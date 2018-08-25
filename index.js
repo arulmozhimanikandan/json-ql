@@ -5,6 +5,7 @@ const jsonfile = require('jsonfile');
 const insertAction = 'insertAction';
 const createTableAction = 'createTableAction';
 const selectAction = 'selectAction';
+const updateAction = 'updateAction';
 
 
 class jsonQl {
@@ -17,7 +18,11 @@ class jsonQl {
         throw new Error(` ${param} parameter missing, Unable perform ${action}`);
     };
 
-    // Creates DB folder to store table JSONs
+
+    /**
+     * @description Creates DB folder to store table JSONs
+     * @param {Function} callback
+     */
     createDB(callback) {
         mkdirp(`DB`, function (err) {
             if (err) {
@@ -29,7 +34,12 @@ class jsonQl {
         })
     }
 
-    // Creates new table json
+    /**
+     * @description Creates new table json
+     * @param {String} tableName
+     * @param {Array} columns
+     * @param {Function} callback
+     */
     createTable(tableName = this.constructor.isRequired('table name', createTableAction), columns = this.constructor.isRequired('columns', createTableAction), callback) {
         mkdirp(`DB/${tableName}`, function (err) {
             if (tableName && columns) {
@@ -49,7 +59,13 @@ class jsonQl {
         })
     }
 
-    // Insert data into table
+    /**
+     * @description Insert data into table
+     * @param {String} tableName
+     * @param {Array} columns
+     * @param {Array} values
+     * @param {Function} callback
+     */
     insertInto(tableName = this.constructor.isRequired('table name', insertAction), columns = this.constructor.isRequired('columns', insertAction), values = this.constructor.isRequired('values', insertAction), callback) {
         let error = null;
         columns.length === values.length ?
@@ -89,7 +105,13 @@ class jsonQl {
             callback({error: 'columns and values are mis matching'})
     }
 
-    // read table either *| [array of column name exp: 'name','email]
+
+    /**
+     * @description Read table data
+     * @param {String} tableName
+     * @param {Array} columns
+     * @param {Function} callback
+     */
     selectItem(tableName = this.constructor.isRequired('table name', selectAction), columns = this.constructor.isRequired('columns', selectAction), callback) {
         jsonfile.readFile(`DB/${tableName}/index.json`, (err, obj) => {
             let new_obj = {...obj}
