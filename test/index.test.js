@@ -1,6 +1,6 @@
 const jsonQl = require('../index');
 
-const nosqlDB = new jsonQl.module();
+const nosqlDB = new jsonQl();
 
 describe('Test jsonQl class', () => {
 

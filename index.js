@@ -135,4 +135,4 @@ class jsonQl {
 }
 
 
-exports.module = jsonQl;
+module.exports = jsonQl;
